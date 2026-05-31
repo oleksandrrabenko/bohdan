@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пасажирські перевезення: Тетіївщина — Київ</title>
+    <style>
+        :root {
+            --primary: #FF6B00;    /* Яскраво-помаранчевий (основний акцент) */
+            --accent: #E65100;     /* Темно-помаранчевий (для кнопок/ховерів) */
+            --light: #1A1A1A;      /* Глибокий чорний для карток */
+            --dark: #121212;       /* Майже чорний фон сайту */
+            --text-main: #FFFFFF;  /* Білий текст */
+            --text-muted: #A0A0A0; /* Світло-сірий текст для другорядних елементів */
+        }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            line-height: 1.6; 
+            background: var(--dark); 
+            color: var(--text-main); 
+        }
+        
+        /* Шапка */
+        header { 
+            background: #000000; /* Абсолютно чорний фон */
+            color: white; 
+            padding: 20px; 
+            text-align: center; 
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.15); /* Помаранчева легка тінь */
+            border-bottom: 2px solid var(--primary);
+        }
+        .days { 
+            background: var(--primary); 
+            color: #000000; /* Чорний текст на помаранчевій плашці */
+            padding: 5px 15px; 
+            border-radius: 20px; 
+            font-weight: bold; 
+            display: inline-block; 
+            margin-top: 10px; 
+        }
+
+        /* Секція з фото */
+        .bus-hero { 
+            width: 100%; 
+            max-width: 1000px; 
+            margin: 20px auto; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border: 1px solid #2A2A2A;
+        }
+        .bus-hero img { 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+            filter: grayscale(15%) brightness(90%); /* Трохи приглушили фото під темну тему */
+        }
+
+        /* Розклад */
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .schedule-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        
+        /* Картки рейсів */
+        .route-card { 
+            background: var(--light); 
+            padding: 20px; 
+            border-radius: 12px; 
+            border-left: 5px solid var(--primary); /* Помаранчева лінія зліва */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+        }
+        .route-card h3 { 
+            margin-top: 0; 
+            color: var(--primary); 
+            border-bottom: 1px solid #2A2A2A; 
+            padding-bottom: 10px; 
+        }
+        .time-row { 
+            display: flex; 
+            justify-content: space-between; 
+            padding: 8px 0; 
+            border-bottom: 1px dashed #2A2A2A; 
+            color: var(--text-muted);
+        }
+        .time { font-weight: bold; color: var(--primary); } /* Час тепер теж помаранчевий і яскравий */
+        .via { font-size: 0.9em; color: var(--text-muted); font-style: italic; }
+
+        /* Контакти */
+        .contacts { 
+            background: #000000; 
+            color: white; 
+            padding: 30px 20px; 
+            text-align: center; 
+            margin-top: 40px; 
+            border-top: 2px solid var(--primary);
+        }
+        .phone-box { margin: 20px 0; }
+        
+        /* Помаранчева кнопка виклику */
+        .btn-call { 
+            display: inline-block; 
+            background: var(--primary); 
+            color: #000000; 
+            padding: 15px 30px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            margin: 10px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+        }
+        .btn-call:hover { 
+            background: var(--accent); 
+            color: #ffffff;
+            transform: scale(1.05); 
+            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5);
+        }
+
+        @media (max-width: 600px) {
+            .booking-form { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Пасажирські перевезення</h1>
+    <div class="days">Понеділок — Субота</div>
+    <p style="color: var(--text-muted);">Регулярні рейси до Києва та назад</p>
+</header>
+
+<div class="container">
+    <div class="bus-hero">
+        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1000&q=80" alt="Наш автобус">
+    </div>
+
+    <h2 style="text-align: center; margin-bottom: 30px; color: var(--primary);">Графік роботи маршрутів</h2>
+
+    <div class="schedule-grid">
+        <div class="route-card">
+            <h3>Хмелівка — Київ</h3>
+            <div class="time-row"><span>через П'ятигори</span> <span class="time">5:00</span></div>
+            <div class="time-row"><span>через П'ятигори</span> <span class="time">13:00</span></div>
+        </div>
+
+        <div class="route-card">
+            <h3>П'ятигори — Київ</h3>
+            <div class="time-row"><span>Прямий рейс</span> <span class="time">6:00</span></div>
+            <div class="time-row"><span>Прямий рейс</span> <span class="time">13:50</span></div>
+        </div>
+
+        <div class="route-card">
+            <h3>Денихівка — Київ</h3>
+            <div class="time-row"><span>Прямий рейс</span> <span class="time">5:30</span></div>
+            <div class="time-row"><span>Прямий рейс</span> <span class="time">14:15</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="contacts">
+    <h2>Замовлення місць та довідка</h2>
+    <p style="color: var(--text-muted);">Телефонуйте для бронювання заздалегідь</p>
+    <div class="phone-box">
+        <a href="tel:+380000000000" class="btn-call">Зателефонувати</a>
+    </div>
+</div>
+
+</body>
+</html>
